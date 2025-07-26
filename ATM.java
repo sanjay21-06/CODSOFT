@@ -13,27 +13,27 @@ class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("✅ ₹" + amount + " deposited successfully.");
+            System.out.println("₹" + amount + " deposited successfully.");
         } else {
-            System.out.println("❌ Invalid deposit amount.");
+            System.out.println("Invalid deposit amount.");
         }
     }
 
     // Withdraw method
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("❌ Withdrawal amount must be greater than zero.");
+            System.out.println("Withdrawal amount must be greater than zero.");
         } else if (amount > balance) {
-            System.out.println("❌ Insufficient balance. Withdrawal failed.");
+            System.out.println("Insufficient balance. Withdrawal failed.");
         } else {
             balance -= amount;
-            System.out.println("✅ ₹" + amount + " withdrawn successfully.");
+            System.out.println("₹" + amount + " withdrawn successfully.");
         }
     }
 
     // Check balance method
     public void checkBalance() {
-        System.out.printf("💰 Current Balance: ₹%.2f\n", balance);
+        System.out.printf("Current Balance: ₹%.2f\n", balance);
     }
 }
 
@@ -43,15 +43,15 @@ public class ATM {
         Scanner sc = new Scanner(System.in);
         BankAccount account = new BankAccount(1000); // Starting balance ₹1000
 
-        System.out.println("🏧 Welcome to the ATM Machine!");
+        System.out.println("Welcome to the ATM Machine!");
 
         while (true) {
             // Display menu
             System.out.println("\nChoose an option:");
-            System.out.println("1. 💸 Withdraw");
-            System.out.println("2. 💰 Deposit");
-            System.out.println("3. 🧾 Check Balance");
-            System.out.println("4. ❌ Exit");
+            System.out.println("1. Withdraw");
+            System.out.println("2. Deposit");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
 
@@ -74,12 +74,12 @@ public class ATM {
                     break;
 
                 case 4:
-                    System.out.println("👋 Thank you for using the ATM. Goodbye!");
+                    System.out.println("Thank you for using the ATM. Goodbye!");
                     sc.close();
                     return;
 
                 default:
-                    System.out.println("⚠️ Invalid choice. Please try again.");
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
