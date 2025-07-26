@@ -3,20 +3,15 @@ import java.util.Scanner;
 public class GradeCalculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("🎓 Welcome to the Grade Calculator!");
-
-        
+        System.out.println("Welcome to the Grade Calculator!");
         System.out.print("Enter total number of subjects: ");
         int subjectCount = sc.nextInt();
 
         int totalMarks = 0;
-
         
         for (int i = 1; i <= subjectCount; i++) {
             System.out.print("Enter marks for subject " + i + " (out of 100): ");
             int marks = sc.nextInt();
-
             
             while (marks < 0 || marks > 100) {
                 System.out.print("Invalid input. Enter marks between 0 and 100: ");
@@ -26,10 +21,7 @@ public class GradeCalculator {
             totalMarks += marks;
         }
 
-       
         double average = (double) totalMarks / subjectCount;
-
-        
         String grade;
         if (average >= 90) {
             grade = "A+";
